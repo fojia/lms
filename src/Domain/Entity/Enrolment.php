@@ -47,19 +47,6 @@ final class Enrolment
 
     public function updatePeriod(DateTimeRange $newPeriod): void
     {
-        $now = new \DateTimeImmutable();
-        if ($newPeriod->hasEnded($now)) {
-            throw new InvalidEnrolmentPeriodException(
-                'Cannot update enrolment to a period that has already ended'
-            );
-        }
-
-        if ($this->period->end !== null && $newPeriod->start > $this->period->end) {
-            throw new InvalidEnrolmentPeriodException(
-                'New period start date cannot be after the current period end date'
-            );
-        }
-
         $this->period = $newPeriod;
     }
 }

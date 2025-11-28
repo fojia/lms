@@ -3,7 +3,8 @@
   "description": "",
   "type": "project",
   "require": {
-    "php": ">=8.2"
+    "php": ">=8.2",
+    "ramsey/uuid": "^4.7"
   },
   "require-dev": {
     "phpunit/phpunit": "^11.0"
